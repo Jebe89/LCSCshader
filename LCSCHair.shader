@@ -43,7 +43,7 @@ Shader "LCSCshader/Hair"
 		[Header(Hair Shine)]_Hcubemap("HairShine CubeMap", CUBE) = "black" {}
 		_CubemapRotation("Cubemap Rotation", Range( 0 , 360)) = 0
 		[ToggleUI]_CubemapViewRoatationExperimental("Cubemap View Roatation (Experimental)", Float) = 0
-		_HairShineColor("Hair Shine Color", Color) = (1,1,1,0)
+		[HDR]_HairShineColor("Hair Shine Color", Color) = (1,1,1,0)
 		_HairShinePower("Hair Shine Power", Range( 0 , 10)) = 1
 		_ManualCubemapControl("Manual Cubemap Control", Vector) = (0,0,0,0)
 		_ShineNoiseMap("Shine NoiseMap", 2D) = "white" {}
@@ -2410,7 +2410,6 @@ Node;AmplifyShaderEditor.GetLocalVarNode;1381;696.4379,1607.218;Inherit;False;12
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;904;634.5087,1753.781;Float;False;True;-1;2;ASEMaterialInspector;100;13;LCSCshader/Hair;fe4af87006695164d84819765fe282b7;True;ForwardBase;0;1;ForwardBase;3;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;2;False;0;True;True;0;1;False;;0;False;;0;0;False;;0;False;;True;1;False;;1;False;;False;False;False;False;False;False;False;False;False;True;0;False;;True;True;0;True;_CullMode;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;True;True;True;0;True;_StencilReference;255;True;_StencilReadMask;255;True;_StencilWriteMask;0;True;_StencilComparison;0;True;_StencilPassFront;0;True;_StencilFailFront;0;True;_StencilZFailFront;0;False;;0;False;;0;False;;0;False;;True;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;1;LightMode=ForwardBase;True;2;False;0;;0;0;Standard;0;0;5;True;True;True;False;True;False;;False;0
 Node;AmplifyShaderEditor.NegateNode;1382;-289.7861,4056.681;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SamplerNode;1342;-1598.7,3097.95;Inherit;True;Property;_Hcubemap;HairShine CubeMap;36;1;[Header];Create;False;1;Hair Shine;0;0;False;0;False;-1;None;fad893ce3e4907245ae76bf2e4f48724;True;0;False;black;LockedToCube;False;Object;-1;Auto;Cube;8;0;SAMPLERCUBE;;False;1;FLOAT3;0,0,0;False;2;FLOAT;0;False;3;FLOAT3;0,0,0;False;4;FLOAT3;0,0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.ColorNode;1356;-1573.866,3290.706;Inherit;False;Property;_HairShineColor;Hair Shine Color;39;0;Create;True;0;0;0;False;0;False;1,1,1,0;1,1,1,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleAddOpNode;1353;-1026.459,3241.146;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.RegisterLocalVarNode;1354;-888.9138,3227.973;Inherit;False;BeforeEmi_diff;-1;True;1;0;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;1355;-1270.482,3156.994;Inherit;False;3;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
@@ -2425,7 +2424,6 @@ Node;AmplifyShaderEditor.SimpleMultiplyOpNode;1313;-2726.961,3402.872;Inherit;Fa
 Node;AmplifyShaderEditor.SamplerNode;1330;-3242.522,3392.835;Inherit;True;Property;_ShineNoiseMap;Shine NoiseMap;42;0;Create;True;0;0;0;False;0;False;-1;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.RangedFloatNode;1336;-2915.961,3476.872;Inherit;False;Property;_NoiseFactor;Noise Factor;43;0;Create;True;0;0;0;False;0;False;-0.01;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleAddOpNode;1334;-3031.212,3001.612;Inherit;False;3;3;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;1;FLOAT3;0
-Node;AmplifyShaderEditor.Vector3Node;1335;-3303.791,3114.585;Inherit;False;Property;_ManualCubemapControl;Manual Cubemap Control;41;0;Create;True;0;0;0;False;0;False;0,0,0;0,0,0;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
 Node;AmplifyShaderEditor.ToggleSwitchNode;1341;-3273.871,3257.606;Inherit;False;Property;_DynamicShineExperimental;DynamicShine (Experimental);44;0;Create;True;0;0;0;False;0;False;0;False;2;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.GetLocalVarNode;1310;-3518.065,3280.99;Inherit;False;1347;DynamicShine;1;0;OBJECT;;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.TextureCoordinatesNode;1311;-3499.618,3410.235;Inherit;False;1;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
@@ -2437,6 +2435,8 @@ Node;AmplifyShaderEditor.CustomExpressionNode;1351;-1811.733,3118.695;Inherit;Fa
 Node;AmplifyShaderEditor.SimpleAddOpNode;1389;-2164.512,3338.493;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.ToggleSwitchNode;1361;-2031.523,3258.172;Inherit;False;Property;_CubemapViewRoatationExperimental;Cubemap View Roatation (Experimental);38;0;Create;True;0;0;0;False;0;False;0;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.GetLocalVarNode;1385;-2403.143,3361.775;Inherit;False;1384;Rotation;1;0;OBJECT;;False;1;FLOAT;0
+Node;AmplifyShaderEditor.Vector3Node;1335;-3306.184,3113.389;Inherit;False;Property;_ManualCubemapControl;Manual Cubemap Control;41;0;Create;True;0;0;0;False;0;False;0,0,0;0,0,0;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
+Node;AmplifyShaderEditor.ColorNode;1356;-1572.566,3290.706;Inherit;False;Property;_HairShineColor;Hair Shine Color;39;1;[HDR];Create;True;0;0;0;False;0;False;1,1,1,0;1,1,1,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 WireConnection;432;0;624;0
 WireConnection;433;0;432;0
 WireConnection;428;0;429;0
@@ -2943,4 +2943,4 @@ WireConnection;1389;1;1385;0
 WireConnection;1361;0;1352;0
 WireConnection;1361;1;1389;0
 ASEEND*/
-//CHKSM=0F9921187ED639CD0B879FF83F187CAD514B8E5B
+//CHKSM=CE7814E51C1B66F75C86C8E6B90E00C03E2BB0A8
