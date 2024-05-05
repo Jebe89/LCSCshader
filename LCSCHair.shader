@@ -19,21 +19,21 @@ Shader "LCSCshader/Hair"
 		[HDR]_ToonDarkColor("ToonDarkColor", Color) = (1,1,1,0)
 		[Header(Rim)]_rimTex("RimTex (_Rmask)", 2D) = "black" {}
 		_RimTexOffset("RimTexOffset", Range( -1 , 1)) = 0
-		[HDR]_RimColor("RimColor", Color) = (1,1,1,1)
+		[HDR]_RimColor("RimColor", Color) = (1,1,1,0.6980392)
 		_RimPower("RimPower", Range( 0 , 10)) = 1
 		_RimStep("RimStep", Range( 0 , 2)) = 0.5
 		_RimFeather("RimFeather", Range( 0 , 1)) = 0.3
 		_RimSpecRate("RimSpecRate", Range( 0 , 1)) = 0.5
-		_RimShadowRate("RimShadowRate", Range( 0 , 5)) = 1
+		_RimShadowRate("RimShadowRate", Range( 0 , 10)) = 1
 		_RimAttenuation("RimAttenuation", Range( 0 , 1)) = 0
 		_RimHorizonOffset("RimHorizonOffset", Range( -1 , 1)) = 0
 		_RimVerticalOffset("RimVerticalOffset", Range( -1 , 1)) = 0
-		[HDR]_RimColor2("RimColor2", Color) = (0,0,0,0)
+		[HDR]_RimColor2("RimColor2", Color) = (0,0,0,0.6980392)
 		_RimPower2("RimPower2", Range( 0 , 10)) = 1
 		_RimStep2("RimStep2", Range( 0 , 2)) = 0.5
 		_RimFeather2("RimFeather2", Range( 0 , 1)) = 0.3
 		_RimSpecRate2("RimSpecRate2", Range( 0 , 1)) = 0.5
-		_RimShadowRate2("RimShadowRate2", Range( 0 , 2)) = 0
+		_RimShadowRate2("RimShadowRate2", Range( 0 , 10)) = 0
 		_RimAttenuation2("RimAttenuation2", Range( 0 , 1)) = 0
 		_RimHorizonOffset2("RimHorizonOffset2", Range( -1 , 1)) = 0
 		_RimVerticalOffset2("RimVerticalOffset2", Range( -1 , 1)) = 0
@@ -2017,7 +2017,7 @@ Node;AmplifyShaderEditor.ColorNode;558;-2148.207,2131.801;Inherit;False;Property
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;557;-1385.882,2350.073;Inherit;False;3;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
 Node;AmplifyShaderEditor.SimpleAddOpNode;555;-1502.489,2563.954;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;1081;-1995.207,2612.05;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.RangedFloatNode;575;-1730.331,2701.104;Inherit;False;Property;_RimShadowRate2;RimShadowRate2;29;0;Create;True;0;0;0;False;0;False;0;0;0;2;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;575;-1730.331,2701.104;Inherit;False;Property;_RimShadowRate2;RimShadowRate2;29;0;Create;True;0;0;0;False;0;False;0;0;0;10;0;1;FLOAT;0
 Node;AmplifyShaderEditor.GetLocalVarNode;544;-2103.758,2386.455;Inherit;False;541;RimColor2;1;0;OBJECT;;False;1;COLOR;0
 Node;AmplifyShaderEditor.GetLocalVarNode;545;-2111.379,2312.675;Inherit;False;539;SpecularColor;1;0;OBJECT;;False;1;COLOR;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;547;-1673.684,2391.892;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
@@ -2247,7 +2247,7 @@ Node;AmplifyShaderEditor.GetLocalVarNode;553;-2173.804,2544.608;Inherit;False;55
 Node;AmplifyShaderEditor.GetLocalVarNode;1080;-2164.907,2618.251;Inherit;False;1076;RimAtten;1;0;OBJECT;;False;1;FLOAT;0
 Node;AmplifyShaderEditor.GetLocalVarNode;1120;-1915.479,2072.308;Inherit;False;208;LightColor;1;0;OBJECT;;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.GetLocalVarNode;566;-1821.799,1997.617;Inherit;False;427;RimStrength;1;0;OBJECT;;False;1;COLOR;0
-Node;AmplifyShaderEditor.ColorNode;426;-1524.877,635.1342;Inherit;False;Property;_RimColor;RimColor;15;1;[HDR];Create;True;0;0;0;False;0;False;1,1,1,1;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;426;-1524.877,635.1342;Inherit;False;Property;_RimColor;RimColor;15;1;[HDR];Create;True;0;0;0;False;0;False;1,1,1,0.6980392;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleSubtractOpNode;452;-1838.538,1298.579;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleDivideOpNode;453;-1677.339,1341.477;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SaturateNode;454;-1549.503,1342.007;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
@@ -2258,8 +2258,8 @@ Node;AmplifyShaderEditor.GetLocalVarNode;456;-2053.307,1338.494;Inherit;False;51
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;461;-1215.135,1293.232;Inherit;False;4;4;0;FLOAT;0;False;1;FLOAT;0.5;False;2;COLOR;0,0,0,0;False;3;FLOAT;0;False;1;COLOR;0
 Node;AmplifyShaderEditor.RegisterLocalVarNode;462;-1074.459,1286.402;Inherit;False;RimStrength2;-1;True;1;0;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.RegisterLocalVarNode;541;-1210.881,1148.893;Inherit;False;RimColor2;-1;True;1;0;COLOR;0,0,0,0;False;1;COLOR;0
-Node;AmplifyShaderEditor.ColorNode;460;-1462.481,1146.64;Inherit;False;Property;_RimColor2;RimColor2;24;1;[HDR];Create;True;0;0;0;False;0;False;0,0,0,0;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.RangedFloatNode;556;-1816.102,1741.901;Inherit;False;Property;_RimShadowRate;RimShadowRate;20;0;Create;True;0;0;0;False;0;False;1;0;0;5;0;1;FLOAT;0
+Node;AmplifyShaderEditor.ColorNode;460;-1462.481,1146.64;Inherit;False;Property;_RimColor2;RimColor2;24;1;[HDR];Create;True;0;0;0;False;0;False;0,0,0,0.6980392;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.RangedFloatNode;556;-1816.102,1741.901;Inherit;False;Property;_RimShadowRate;RimShadowRate;20;0;Create;True;0;0;0;False;0;False;1;0;0;10;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;1206;-1704.633,989.8348;Inherit;False;Property;_RimPower;RimPower;16;0;Create;True;0;0;0;False;0;False;1;0;0;10;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;1210;-1632.621,1542.344;Inherit;False;Property;_RimPower2;RimPower2;25;0;Create;True;0;0;0;False;0;False;1;0;0;10;0;1;FLOAT;0
 Node;AmplifyShaderEditor.PowerNode;423;-1454.055,817.1031;Inherit;False;False;2;0;FLOAT;0;False;1;FLOAT;3;False;1;FLOAT;0
@@ -2937,4 +2937,4 @@ WireConnection;904;0;618;0
 WireConnection;1465;0;1206;0
 WireConnection;1466;0;1210;0
 ASEEND*/
-//CHKSM=67307520C8D92F818F5A254DD0CCC726D714B96B
+//CHKSM=DE85713A8B2E58CFED42FF908C6ED9E28F1B0F28
