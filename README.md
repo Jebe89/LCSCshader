@@ -5,4 +5,6 @@ Unlike the in-game effect in the closet, this shader uses the classic Lambert Te
 
 Remember to set the shade texture's warp mode to clamp.
 
+Dont use any experimental option, its currently broken and is pending for fix.
+
 [LCumashader Repository Link](https://github.com/Jebe89/LCumashader)
